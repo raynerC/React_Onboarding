@@ -69,12 +69,7 @@ export default function NewsGrid() {
                   </p>
                 </div>
                 <div class="text-left mt-3.5">
-                  <Link to={{
-                        pathname: "/SecondPage",
-                        state: {
-                          postId: post.id
-                        }
-                        }} class="font-bold">
+                <Link to="/SecondPage" state={post.id} class="font-bold">
                     Read More
                   </Link>
                 </div>

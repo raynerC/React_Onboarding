@@ -66,10 +66,11 @@ function DisplayPageContent({ postId }) {
     );
 }
 
-export default function SecondPage() {
-  componentDidMount () 
-    const { postId } = this.props.location.state
-  console.log(postId);
+export default function SecondPage(props) {
+  const location = useLocation();
+  const state = location.state;
+  console.log(state);
+
   //  if (props.comment)
   return (
     <div>
@@ -82,7 +83,7 @@ export default function SecondPage() {
             </Link>
           </div>
 
-          <DisplayPageContent postId={postId} />
+          <DisplayPageContent postId={state} />
          
           <p class="text-base text-black-300 mt-5">
             The alignment is done after the lengths and auto margins are
@@ -122,7 +123,7 @@ export default function SecondPage() {
               </div>
             ))} */}
 
-          <FetchComments postId={2} />
+          <FetchComments postId={state} />
         </div>
       </div>
       <div class="md:w-1/3"></div>
